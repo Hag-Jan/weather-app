@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="96ec1b11-68cf-4c88-91ec-49e24c84f77e" name="Changes" comment="Added popular_weekly_menu.html, added redirect attribute messages for when dishes&lt;7 and for when deleting dish">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/veckansmeny/domain/VeckansMenyDomain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/veckansmeny/domain/VeckansMenyDomain.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="270NqjlRL4lJeA8BbfkNCwRpjbd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VeckansMenyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="VeckansMeny" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.veckansmeny.VeckansMenyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="96ec1b11-68cf-4c88-91ec-49e24c84f77e" name="Changes" comment="" />
+      <created>1648453236513</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648453236513</updated>
+      <workItem from="1648453237763" duration="24208000" />
+      <workItem from="1648538401201" duration="22838000" />
+      <workItem from="1648716887993" duration="8510000" />
+      <workItem from="1648815232310" duration="664000" />
+      <workItem from="1649058883683" duration="3388000" />
+      <workItem from="1649147593216" duration="1015000" />
+    </task>
+    <task id="LOCAL−00001" summary="Commit added button on update_dish page that leads to add_ingredient_to_dish. Added add ingredient functionallity">
+      <created>1648467766518</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1648467766518</updated>
+    </task>
+    <task id="LOCAL−00002" summary="Added add/remove dish from ingredient functuinallity">
+      <created>1648541445968</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1648541445968</updated>
+    </task>
+    <task id="LOCAL−00003" summary="Added like functionallity and page for popular dishes weekly menu">
+      <created>1648557841620</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1648557841620</updated>
+    </task>
+    <task id="LOCAL−00004" summary="Added popular_weekly_menu.html, added redirect attribute messages for when dishes&lt;7 and for when deleting dish">
+      <created>1648571695474</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1648571695474</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit added button on update_dish page that leads to add_ingredient_to_dish. Added add ingredient functionallity" />
+    <MESSAGE value="Added add/remove dish from ingredient functuinallity" />
+    <MESSAGE value="Added like functionallity and page for popular dishes weekly menu" />
+    <MESSAGE value="Added popular_weekly_menu.html, added redirect attribute messages for when dishes&lt;7 and for when deleting dish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added popular_weekly_menu.html, added redirect attribute messages for when dishes&lt;7 and for when deleting dish" />
+  </component>
+</project>

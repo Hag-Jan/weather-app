@@ -1,0 +1,233 @@
+Index: src/main/resources/templates/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html xmlns:th=\"http://www.thymeleaf.org\">\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Veckans Meny</title>\r\n    <link rel=\"stylesheet\" href=\"webjars/bootstrap/5.1.1/css/bootstrap.min.css\" type=\"text/css\"/>\r\n\r\n</head>\r\n<body>\r\n\r\n<div class=\"m-3\">\r\n    <a th:href=\"@{/dishes/new}\" class=\"btn btn-info\" role=\"button\">Add Dish</a>\r\n    <a th:href=\"@{/addNewIngredient}\" class=\"btn btn-info\" role=\"button\">Add Ingredient</a>\r\n</div>\r\n\r\n<h3>Dishes</h3>\r\n<table class=\"table table-bordered\">\r\n    <thead style=\"background-color: midnightblue; color: white\">\r\n    <tr>\r\n        <th>ID</th>\r\n        <th>Name</th>\r\n        <th>Type</th>\r\n        <th>Operations</th>\r\n    </tr>\r\n    </thead>\r\n\r\n    <tbody class=\"table-light\">\r\n\r\n    <th:block th:each=\"dish : ${dishList}\">\r\n        <tr>\r\n            <td th:text=\"${dish.id}\"></td>\r\n            <td th:text=\"${dish.name}\"></td>\r\n            <td th:text=\"${dish.type}\"></td>\r\n            <td>\r\n                <a th:href=\"@{/updateDish(dishId=${dish.id})}\" class=\"btn btn-info\" role=\"button\">Edit</a>\r\n                <a th:href=\"@{/deleteDish(dishId=${dish.id})}\" class=\"btn btn-info\" role=\"button\">Delete</a>\r\n            </td>\r\n        </tr>\r\n    </th:block>\r\n\r\n    </tbody>\r\n\r\n</table>\r\n\r\n<h3>Ingredients</h3>\r\n<table class=\"table table-bordered\">\r\n    <thead style=\"background-color: midnightblue; color: white\">\r\n    <tr>\r\n        <th>ID</th>\r\n        <th>Name</th>\r\n        <th>Operations</th>\r\n    </tr>\r\n    </thead>\r\n\r\n    <tbody class=\"table-light\">\r\n\r\n    <th:block th:each=\"ingredient : ${ingredientList}\">\r\n        <tr>\r\n            <td th:text=\"${ingredient.id}\"></td>\r\n            <td th:text=\"${ingredient.name}\"></td>\r\n            <td>\r\n                <a th:href=\"@{/updateIngredient(ingredientId=${ingredient.id})}\" class=\"btn btn-info\" role=\"button\">Edit</a>\r\n                <a th:href=\"@{/deleteIngredient(ingredientId=${ingredient.id})}\" class=\"btn btn-info\" role=\"button\">Delete</a>\r\n            </td>\r\n        </tr>\r\n    </th:block>\r\n\r\n    </tbody>\r\n\r\n</table>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/index.html b/src/main/resources/templates/index.html
+--- a/src/main/resources/templates/index.html	
++++ b/src/main/resources/templates/index.html	
+@@ -12,6 +12,8 @@
+ <div class="m-3">
+     <a th:href="@{/dishes/new}" class="btn btn-info" role="button">Add Dish</a>
+     <a th:href="@{/addNewIngredient}" class="btn btn-info" role="button">Add Ingredient</a>
++    <a th:href="@{/popularDishes}" class="btn btn-info" role="button">Show Most Popular Dishes</a>
++
+ </div>
+ 
+ <h3>Dishes</h3>
+@@ -21,6 +23,7 @@
+         <th>ID</th>
+         <th>Name</th>
+         <th>Type</th>
++        <th>Likes</th>
+         <th>Operations</th>
+     </tr>
+     </thead>
+@@ -32,9 +35,11 @@
+             <td th:text="${dish.id}"></td>
+             <td th:text="${dish.name}"></td>
+             <td th:text="${dish.type}"></td>
++            <td th:text="${dish.likes}"></td>
+             <td>
+                 <a th:href="@{/updateDish(dishId=${dish.id})}" class="btn btn-info" role="button">Edit</a>
+                 <a th:href="@{/deleteDish(dishId=${dish.id})}" class="btn btn-info" role="button">Delete</a>
++                <a th:href="@{/likeDish(dishId=${dish.id})}" class="btn btn-info" role="button">Like</a>
+             </td>
+         </tr>
+     </th:block>
+Index: src/main/java/com/example/veckansmeny/model/Dish.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.veckansmeny.model;\r\n\r\nimport javax.persistence.*;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\n@Entity\r\npublic class Dish {\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    private Integer id;\r\n\r\n    private String name;\r\n    private String type;\r\n\r\n    @ManyToMany\r\n    List<Ingredient> ingredients;\r\n\r\n    public void setId(Integer id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public Integer getId() {\r\n        return id;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n    public String getType() {\r\n        return type;\r\n    }\r\n\r\n    public void setType(String type) {\r\n        this.type = type;\r\n    }\r\n\r\n    public List<Ingredient> getIngredients() {\r\n        if (ingredients == null) {\r\n            ingredients = new ArrayList<>();\r\n        }\r\n        return ingredients;\r\n    }\r\n\r\n    public void setIngredients(List<Ingredient> ingredients) {\r\n        this.ingredients = ingredients;\r\n    }\r\n\r\n    public void addIngredient(Ingredient ingredient) {\r\n        getIngredients().add(ingredient);\r\n        ingredient.getDishes().add(this);\r\n    }\r\n\r\n    public void removeIngredient(Ingredient ingredient) {\r\n        getIngredients().remove(ingredient);\r\n        ingredient.getDishes().remove(this);\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"Dish{\" +\r\n                \"id=\" + id +\r\n                \", name='\" + name + '\\'' +\r\n                \", type='\" + type + '\\'' +\r\n                \", ingredients=\" + ingredients +\r\n                '}';\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/veckansmeny/model/Dish.java b/src/main/java/com/example/veckansmeny/model/Dish.java
+--- a/src/main/java/com/example/veckansmeny/model/Dish.java	
++++ b/src/main/java/com/example/veckansmeny/model/Dish.java	
+@@ -12,10 +12,18 @@
+ 
+     private String name;
+     private String type;
+-
++    private int likes;
+     @ManyToMany
+     List<Ingredient> ingredients;
+ 
++    public int getLikes() {
++        return likes;
++    }
++
++    public void setLikes(int likes) {
++        this.likes = likes;
++    }
++
+     public void setId(Integer id) {
+         this.id = id;
+     }
+Index: src/main/java/com/example/veckansmeny/controller/VeckansMenyController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.veckansmeny.controller;\r\n\r\nimport com.example.veckansmeny.model.Dish;\r\nimport com.example.veckansmeny.model.Ingredient;\r\nimport com.example.veckansmeny.service.DishService;\r\nimport com.example.veckansmeny.service.IngredientService;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.ui.Model;\r\nimport org.springframework.web.bind.annotation.GetMapping;\r\nimport org.springframework.web.bind.annotation.PostMapping;\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\n\r\nimport java.util.List;\r\n\r\n@Controller\r\npublic class VeckansMenyController {\r\n\r\n    @Autowired\r\n    private DishService dishService;\r\n\r\n    @Autowired\r\n    private IngredientService ingredientService;\r\n\r\n    @GetMapping(\"/\")\r\n    public String showHomePage(Model model) {\r\n        List<Dish> listOfDishes = dishService.findAllDishes();\r\n        List<Ingredient> listOfIngredients = ingredientService.getAllIngredients();\r\n\r\n        model.addAttribute(\"dishList\", listOfDishes);\r\n        model.addAttribute(\"ingredientList\", listOfIngredients);\r\n        return \"index\";\r\n    }\r\n\r\n    @GetMapping(\"/en\")\r\n    public String showIndex() {\r\n        return \"index\";\r\n    }\r\n\r\n    @GetMapping(\"/dishes/new\")\r\n    public String showAddDish(Model model) {\r\n        model.addAttribute(\"dish\", new Dish());\r\n        return \"add_dish\";\r\n    }\r\n\r\n    @PostMapping(\"/dish/save\")\r\n    public String saveDish(Model model, Dish dish) {\r\n        dishService.saveDish(dish);\r\n        model.addAttribute(\"dish\", dish);\r\n        model.addAttribute(\"ingredientList\", dish.getIngredients());\r\n        return \"update_dish\";\r\n    }\r\n\r\n    @GetMapping(\"/addNewIngredient\")\r\n    public String showAddNewIngredientPage(Model model) {\r\n        model.addAttribute(\"ingredient\", new Ingredient());\r\n        return \"add_ingredient\";\r\n    }\r\n\r\n    @GetMapping(\"/updateDish\")\r\n    public String showUpdateDishPage(Model model, Integer dishId) {\r\n        Dish dish = dishService.findDishBasedOnId(dishId);\r\n        model.addAttribute(\"dish\", dish);\r\n        model.addAttribute(\"ingredientList\", dish.getIngredients());\r\n        return \"update_dish\";\r\n    }\r\n\r\n    @GetMapping(\"/updateIngredient\")\r\n    public String showUpdateIngredientPage(Model model, Integer ingredientId) {\r\n        Ingredient ingredient = ingredientService.findIngredientById(ingredientId);\r\n        model.addAttribute(\"ingredient\", ingredient);\r\n        model.addAttribute(\"dishList\", ingredient.getDishes());\r\n        return \"update_ingredient\";\r\n    }\r\n\r\n    @GetMapping(\"/deleteDish\")\r\n    public String deleteDish(Integer dishId) {\r\n        dishService.deleteDish(dishId);\r\n        return \"redirect:/\";\r\n    }\r\n\r\n    @GetMapping(\"/deleteIngredient\")\r\n    public String deleteIngredient(Integer ingredientId) {\r\n        Ingredient ingredient = ingredientService.findIngredientById(ingredientId);\r\n        ingredient.removeIngredientFromDishes();\r\n        ingredientService.deleteIngredient(ingredientId);\r\n        return \"redirect:/\";\r\n    }\r\n\r\n    @PostMapping(\"/ingredient/save\")\r\n    public String saveIngredient(Ingredient ingredient) {\r\n        ingredientService.saveIngredient(ingredient);\r\n        return \"redirect:/\";\r\n    }\r\n\r\n    @GetMapping(\"/ingredient/new\")\r\n    public String showAddIngredient(Model model) {\r\n        model.addAttribute(\"ingredient\", new Ingredient());\r\n        return \"add_ingredient\";\r\n    }\r\n\r\n    @GetMapping(\"/updateDish/addIngredient\")\r\n    public String showAddIngredientToDishPage(Model model, Integer dishID) {\r\n        List<Ingredient> ingredientList = ingredientService.getAllIngredients();\r\n        Dish dish = dishService.findDishBasedOnId(dishID);\r\n\r\n        model.addAttribute(\"ingredientList\", ingredientList);\r\n        model.addAttribute(\"dish\", dish);\r\n        return \"add_ingredient_to_dish\";\r\n    }\r\n\r\n    @RequestMapping(\"/updateDish/addIngredient/save\")\r\n    public String addIngredientToDish(Model model, Integer ingredientID, Integer dishID) {\r\n        Dish dish = dishService.findDishBasedOnId(dishID);\r\n        Ingredient ingredient = ingredientService.findIngredientById(ingredientID);\r\n\r\n        dish.addIngredient(ingredient);\r\n        dishService.saveDish(dish);\r\n\r\n        model.addAttribute(\"dish\", dish);\r\n        model.addAttribute(\"ingredientList\", dish.getIngredients());\r\n\r\n        return \"update_dish\";\r\n    }\r\n\r\n    @GetMapping(\"/updateDish/removeIngredient\")\r\n    public String removeIngredientFromDish(Model model, Integer dishID, Integer ingredientId) {\r\n        Dish dish = dishService.findDishBasedOnId(dishID);\r\n        Ingredient ingredient = ingredientService.findIngredientById(ingredientId);\r\n\r\n        dish.removeIngredient(ingredient);\r\n        dishService.saveDish(dish);\r\n\r\n        model.addAttribute(\"dish\", dish);\r\n        model.addAttribute(\"ingredientList\", dish.getIngredients());\r\n\r\n        return \"update_dish\";\r\n    }\r\n\r\n    @GetMapping(\"/updateIngredient/addDish\")\r\n    public String showAddDishToIngredientPage(Model model, Integer ingredientID){\r\n        List<Dish> dishList = dishService.findAllDishes();\r\n        Ingredient ingredient = ingredientService.findIngredientById(ingredientID);\r\n        model.addAttribute(\"dishList\",dishList);\r\n        model.addAttribute(\"ingredient\", ingredient);\r\n        return \"add_dish_to_ingredient\";\r\n    }\r\n\r\n    @RequestMapping(\"/updateIngredient/addDish/save\")\r\n    public String addDishToIngredient(Model model, Integer ingredientId, Integer dishId){\r\n        Ingredient ingredient = ingredientService.findIngredientById(ingredientId);\r\n        Dish dish = dishService.findDishBasedOnId(dishId);\r\n        dish.addIngredient(ingredient);\r\n        ingredientService.saveIngredient(ingredient);\r\n        model.addAttribute(\"ingredient\", ingredient);\r\n        model.addAttribute(\"dishList\", ingredient.getDishes());\r\n        return \"update_ingredient\";\r\n    }\r\n\r\n    @GetMapping(\"/updateIngredient/removeDish\")\r\n    public String removeDishFromIngredient(Model model, Integer dishId, Integer ingredientId) {\r\n        Ingredient ingredient = ingredientService.findIngredientById(ingredientId);\r\n        Dish dish = dishService.findDishBasedOnId(dishId);\r\n\r\n        ingredient.removeDish(dish);\r\n        ingredientService.saveIngredient(ingredient);\r\n\r\n        model.addAttribute(\"ingredient\", ingredient);\r\n        model.addAttribute(\"dishList\", ingredient.getDishes());\r\n\r\n        return \"update_ingredient\";\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/veckansmeny/controller/VeckansMenyController.java b/src/main/java/com/example/veckansmeny/controller/VeckansMenyController.java
+--- a/src/main/java/com/example/veckansmeny/controller/VeckansMenyController.java	
++++ b/src/main/java/com/example/veckansmeny/controller/VeckansMenyController.java	
+@@ -170,4 +170,22 @@
+ 
+         return "update_ingredient";
+     }
++
++    @RequestMapping("/likeDish")
++    public String likeDish(Model model, Integer dishId){
++        Dish dish = dishService.findDishBasedOnId(dishId);
++        dish.setLikes(dish.getLikes() + 1);
++        dishService.saveDish(dish);
++        model.addAttribute("dish", dish);
++        return "redirect:/";
++    }
++
++    @GetMapping("/popularDishes")
++    public String getPopularDishesPage(Model model){
++        List<Dish> sevenMostPopularDishes = dishService.findSevenMostPopularDishes();
++
++        model.addAttribute("sevenMostPopularDishes", sevenMostPopularDishes);
++
++        return "popular_dishes";
++    }
+ }
+Index: src/main/java/com/example/veckansmeny/service/DishService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.veckansmeny.service;\r\n\r\nimport com.example.veckansmeny.dao.DishDao;\r\nimport com.example.veckansmeny.dao.IngredientDao;\r\nimport com.example.veckansmeny.model.Dish;\r\nimport com.example.veckansmeny.model.Ingredient;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Service;\r\n\r\nimport java.util.List;\r\n\r\n@Service\r\npublic class DishService {\r\n\r\n    @Autowired\r\n    DishDao dishDao;\r\n\r\n    public void saveDish(Dish dish) {\r\n        dishDao.save(dish);\r\n    }\r\n\r\n    public List<Dish> findAllDishes() {\r\n        return dishDao.findAll();\r\n    }\r\n\r\n    public void deleteDish(Integer dishId) {\r\n        Dish dish = dishDao.findById(dishId).get();\r\n        dishDao.delete(dish);\r\n    }\r\n\r\n    public Dish findDishBasedOnId(Integer dishId) {\r\n        return dishDao.findById(dishId).get();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/veckansmeny/service/DishService.java b/src/main/java/com/example/veckansmeny/service/DishService.java
+--- a/src/main/java/com/example/veckansmeny/service/DishService.java	
++++ b/src/main/java/com/example/veckansmeny/service/DishService.java	
+@@ -7,7 +7,12 @@
+ import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Service;
+ 
++import java.util.Collection;
++import java.util.Collections;
++import java.util.Comparator;
+ import java.util.List;
++import java.util.stream.Collectors;
++import java.util.stream.Stream;
+ 
+ @Service
+ public class DishService {
+@@ -32,4 +37,18 @@
+         return dishDao.findById(dishId).get();
+     }
+ 
++    public List<Dish> findSevenMostPopularDishes() {
++        List<Dish> allDishes = dishDao.findAll();
++
++        List<Dish> sevenMostPopularDishes = allDishes.stream()
++                .sorted((d1,d2)-> d2.getLikes()-d1.getLikes())
++                .limit(7)
++                .collect(Collectors.toList());
++
++         Collections.shuffle(sevenMostPopularDishes);
++
++         return sevenMostPopularDishes;
++
++    }
++
+ }
+Index: src/main/resources/templates/popular_dishes.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/popular_dishes.html b/src/main/resources/templates/popular_dishes.html
+new file mode 100644
+--- /dev/null	
++++ b/src/main/resources/templates/popular_dishes.html	
+@@ -0,0 +1,78 @@
++<!DOCTYPE html>
++<html xmlns:th="http://www.thymeleaf.org">
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Veckans Meny</title>
++    <link rel="stylesheet" href="webjars/bootstrap/5.1.1/css/bootstrap.min.css" type="text/css"/>
++</head>
++<body>
++
++<span class="h1">Monday</span>
++<br/>
++<span class="h3" th:text="${sevenMostPopularDishes.get(0).getName()}"></span>
++<br/>
++<th:block th:each="ingredient : ${sevenMostPopularDishes.get(0).getIngredients()}">
++    <span th:text="${ingredient.name}"></span>
++</th:block>
++
++<br/>
++
++<span class="h1">Tuesday</span>
++<br/>
++<span class="h3" th:text="${sevenMostPopularDishes.get(1).getName()}"></span>
++<br/>
++<th:block th:each="ingredient : ${sevenMostPopularDishes.get(1).getIngredients()}">
++    <span th:text="${ingredient.name}"></span>
++</th:block>
++
++<br/>
++
++<span class="h1">Wednesday</span>
++<br/>
++<span class="h3" th:text="${sevenMostPopularDishes.get(2).getName()}"></span>
++<br/>
++<th:block th:each="ingredient : ${sevenMostPopularDishes.get(2).getIngredients()}">
++    <span th:text="${ingredient.name}"></span>
++</th:block>
++
++<br/>
++<span class="h1">Thursday</span>
++<br/>
++<span class="h3" th:text="${sevenMostPopularDishes.get(3).getName()}"></span>
++<br/>
++<th:block th:each="ingredient : ${sevenMostPopularDishes.get(3).getIngredients()}">
++    <span th:text="${ingredient.name}"></span>
++</th:block>
++
++<br/>
++<span class="h1">Friday</span>
++<br/>
++<span class="h3" th:text="${sevenMostPopularDishes.get(4).getName()}"></span>
++<br/>
++<th:block th:each="ingredient : ${sevenMostPopularDishes.get(4).getIngredients()}">
++    <span th:text="${ingredient.name}"></span>
++</th:block>
++
++<br/>
++
++<span class="h1">Saturday</span>
++<br/>
++<span class="h3" th:text="${sevenMostPopularDishes.get(5).getName()}"></span>
++<br/>
++<th:block th:each="ingredient : ${sevenMostPopularDishes.get(5).getIngredients()}">
++    <span th:text="${ingredient.name}"></span>
++</th:block>
++
++<br/>
++
++<span class="h1">Sunday</span>
++<br/>
++<span class="h3" th:text="${sevenMostPopularDishes.get(6).getName()}"></span>
++<br/>
++<th:block th:each="ingredient : ${sevenMostPopularDishes.get(6).getIngredients()}">
++    <span th:text="${ingredient.name}"></span>
++</th:block>
++
++</body>
++</html>
+\ No newline at end of file

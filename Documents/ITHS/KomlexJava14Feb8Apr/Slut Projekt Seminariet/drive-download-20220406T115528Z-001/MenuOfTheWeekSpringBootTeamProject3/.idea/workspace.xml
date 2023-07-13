@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4e4d7be4-8b20-4e44-8af2-0827e2367061" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="273gj1MsD9BCzHADS22xc3TNp3G" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.MenuOfTheWeekSpringBootTeamProjectApplication">
+    <configuration name="MenuOfTheWeekSpringBootTeamProjectApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="MenuOfTheWeekSpringBootTeamProject3" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.menuoftheweekspringbootteamproject.MenuOfTheWeekSpringBootTeamProjectApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MenuOfTheWeekSpringBootTeamProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="MenuOfTheWeekSpringBootTeamProject3" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.menuoftheweekspringbootteamproject.MenuOfTheWeekSpringBootTeamProjectApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e4d7be4-8b20-4e44-8af2-0827e2367061" name="Changes" comment="" />
+      <created>1648554323586</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648554323586</updated>
+      <workItem from="1648554324970" duration="24177000" />
+      <workItem from="1648713145708" duration="53537000" />
+      <workItem from="1649321303685" duration="1268000" />
+      <workItem from="1649498165840" duration="2018000" />
+    </task>
+    <task id="LOCAL−00001" summary="Updated dishController methods">
+      <created>1648558303673</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1648558303673</updated>
+    </task>
+    <task id="LOCAL−00002" summary="Created startpage">
+      <created>1648560621608</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1648560621608</updated>
+    </task>
+    <task id="LOCAL−00003" summary="Created startpage">
+      <created>1648561083584</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1648561083584</updated>
+    </task>
+    <task id="LOCAL−00004" summary="Created startpage">
+      <created>1648563559909</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1648563559909</updated>
+    </task>
+    <task id="LOCAL−00005" summary="Added cancel function">
+      <created>1648629795849</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1648629795849</updated>
+    </task>
+    <task id="LOCAL−00006" summary="Added ID to ingredients">
+      <created>1648640133456</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1648640133456</updated>
+    </task>
+    <task id="LOCAL−00007" summary="Added Button to ingredient_form">
+      <created>1648640728625</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1648640728625</updated>
+    </task>
+    <task id="LOCAL−00008" summary="Added Button to ingredient_form">
+      <created>1648650002827</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1648650002827</updated>
+    </task>
+    <task id="LOCAL−00009" summary="Added front end To index page">
+      <created>1648735812963</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1648735812963</updated>
+    </task>
+    <task id="LOCAL−00010" summary="Added front end To index page">
+      <created>1648798737708</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1648798737708</updated>
+    </task>
+    <task id="LOCAL−00011" summary="Added front end to startpage">
+      <created>1648801924783</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1648801924783</updated>
+    </task>
+    <task id="LOCAL−00012" summary="Added front end to startpage">
+      <created>1648815616804</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1648815616804</updated>
+    </task>
+    <task id="LOCAL−00013" summary="Added front end to startpage">
+      <created>1648815993804</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1648815993804</updated>
+    </task>
+    <task id="LOCAL−00014" summary="Added messages to main page">
+      <created>1648818016864</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1648818016864</updated>
+    </task>
+    <task id="LOCAL−00015" summary="Added quantity column to order page">
+      <created>1649078504944</created>
+      <option name="number" value="LOCAL−00015" />
+      <option name="presentableId" value="LOCAL−00015" />
+      <updated>1649078504944</updated>
+    </task>
+    <task id="LOCAL−00016" summary="Added remove function to order page">
+      <created>1649081026777</created>
+      <option name="number" value="LOCAL−00016" />
+      <option name="presentableId" value="LOCAL−00016" />
+      <updated>1649081026778</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated dishController methods" />
+    <MESSAGE value="Created startpage" />
+    <MESSAGE value="Added cancel function" />
+    <MESSAGE value="Added ID to ingredients" />
+    <MESSAGE value="Added Button to ingredient_form" />
+    <MESSAGE value="Added front end To index page" />
+    <MESSAGE value="Added front end to startpage" />
+    <MESSAGE value="Added messages to main page" />
+    <MESSAGE value="Added quantity column to order page" />
+    <MESSAGE value="Added remove function to order page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added remove function to order page" />
+  </component>
+</project>
